@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Basic Text Editor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="text.css" />
+  </head>
+
+  <div id="heading" contenteditable="true"></div>
+  <div id="content" contenteditable="true"></div>
+
+  <script>document.getElementById("heading").innerHTML =
+    localStorage["title"] || "Basic Text Editor"; 
+  document.getElementById("content").innerHTML =
+    localStorage["text"] || "This text is automatically saved every second"; 
+  
+  setInterval(function() {
+    localStorage["title"] = document.getElementById("heading").innerHTML; 
+    localStorage["text"] = document.getElementById("content").innerHTML; 
+  }, 1000);
+  Comments (0)</script>
+</html>
